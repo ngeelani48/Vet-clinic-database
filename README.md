@@ -158,7 +158,7 @@ You can deploy this project using:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/shafiuyushawu/vet-clinic-db/issues/).
+Feel free to check the [issues page](https://github.com/ngeelani48/Vet-clinic-database/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
