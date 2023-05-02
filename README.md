@@ -182,7 +182,7 @@ If you like this project, kindly star the project.
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./License) licensed.
+This project is [MIT](./LICENSE) licensed.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
