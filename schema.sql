@@ -9,3 +9,19 @@ CREATE TABLE animals (
     weight_kg decimal not null,
     species varchar(50)
 );
+
+-- Create a table named owners
+CREATE TABLE owners (
+    id INT GENERATED ALWAYS AS IDENTITY, 
+    full_name VARCHAR(100),
+    age INT.
+    PRIMARY KEY(id)
+);
+
+-- Create a table named species
+
+CREATE TABLE species (
+    id INT GENERATED ALWAYS AS IDENTITY, 
+    name VARCHAR(100),
+    PRIMARY KEY(id)
+);
