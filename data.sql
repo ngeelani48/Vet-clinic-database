@@ -1,7 +1,7 @@
 INSERT INTO animals (id, name, date_of_birth, escape_attempts, neutered,weight_kg) VALUES (1, 'Agumon', (to_date('03/02/2020','dd/mm/yyyy')), 0, true, 10.23),
 (2, 'Gabumon', (to_date('15/11/2018','dd/mm/yyyy')), 2, true, 8.0), 
 (3, 'Pikachu', (to_date('07/01/2021','dd/mm/yyyy')), 1,false,15.04), 
-(4, 'Davimon', (to_date('12/05/2017','dd/mm/yyyy')), 5,true,11);
+(4, 'Devimon', (to_date('12/05/2017','dd/mm/yyyy')), 5,true,11);
 
 INSERT INTO animals (id, name, date_of_birth, escape_attempts, neutered,weight_kg) VALUES (5, 'Charmander', (to_date('08/02/2020','dd/mm/yyyy')), 0, false, -11),
 (6, 'Plantmon', (to_date('15/11/2021','dd/mm/yyyy')), 2, true, -5.7), 
@@ -25,3 +25,17 @@ INSERT INTO species (name) VALUES
 ('Pokemon'),
 ('Digimon');
 
+-- Modify animals so it includes the species_id value If the name ends in "mon" it will be Digimon All other animals are Pokemon
+ 
+UPDATE animals SET species_id =
+CASE WHEN name LIKE '%mon' then (SELECT id FROM species WHERE name = 'Digimon')
+ELSE (SELECT id FROM species WHERE name = 'Pokemon') END;
+
+-- Modify inserted animals to include owner information (owner_id)
+UPDATE animals SET owner_id = CASE
+WHEN name = 'Agumon' then (SELECT id FROM owners WHERE full_name = 'Sam Smith')
+WHEN name = 'Gabumon' OR name = 'Pikachu' then (SELECT id FROM owners WHERE full_name = 'Jennifer Orwell')
+WHEN name = 'Devimon' OR name = 'Plantmon' then (SELECT id FROM owners WHERE full_name = 'Bob')
+WHEN name = 'Charmander' OR name = 'Squirtle' OR name = 'Blossom' then (SELECT id FROM owners WHERE full_name = 'Melody Pond')
+WHEN name = 'Boarmon' OR name = 'Angemon' then (SELECT id FROM owners WHERE full_name = 'Dean Winchester')
+END;
