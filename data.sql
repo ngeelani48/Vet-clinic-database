@@ -10,3 +10,18 @@ INSERT INTO animals (id, name, date_of_birth, escape_attempts, neutered,weight_k
 (9, 'Boarmon', (to_date('07/06/2005','dd/mm/yyyy')), 7, true, 20.4),
 (10, 'Blossom', (to_date('13/10/1998','dd/mm/yyyy')), 3, true, 17),
 (11, 'Ditto', (to_date('14/05/2022','dd/mm/yyyy')), 4, true, 22);
+
+-- Insert data into the owners table
+INSERT INTO owners (full_name, age) VALUES 
+('Sam Smith', 34), 
+('Jennifer Orwell', 19), 
+('Bob', 45), 
+('Melody Pond', 77),
+('Dean Winchester', 14),
+('Jodie Whittaker', 38);
+
+-- Insert data into the species table
+INSERT INTO species (name) VALUES
+('Pokemon'),
+('Digimon');
+
