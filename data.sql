@@ -39,3 +39,28 @@ WHEN name = 'Devimon' OR name = 'Plantmon' then (SELECT id FROM owners WHERE ful
 WHEN name = 'Charmander' OR name = 'Squirtle' OR name = 'Blossom' then (SELECT id FROM owners WHERE full_name = 'Melody Pond')
 WHEN name = 'Boarmon' OR name = 'Angemon' then (SELECT id FROM owners WHERE full_name = 'Dean Winchester')
 END;
+
+-- Insert data into  vets table.
+INSERT INTO vets (name, age, date_of_graduation) VALUES
+('William Tatcher', 45, '2000-04-23'),
+('Maisy Smith', 26, '2019-01-17'),
+('Stephanie Mendez', 64, '1981-05-04'),
+('Jack Harkness', 38, '2008-06-08'); 
+
+-- Insert data into the spesialization table.
+INSERT INTO specializations (vet_id, species_id) VALUES
+((select id from vets where name like 'William Tatcher'),
+(select id from species where name = 'Pokemon')),
+((select id from vets where name like 'Stephanie Mendez'),
+(select id from species where name = 'Digimon')),
+((select id from vets where name like 'Stephanie Mendez'),
+(select id from species where name = 'Pokemon')),
+((select id from vets where name like 'Jack Harkness'),
+(select id from species where name = 'Digimon'));
+
+
+
+Insert the following data for specialties:
+Vet William Tatcher is specialized in Pokemon.
+Vet Stephanie Mendez is specialized in Digimon and Pokemon.
+Vet Jack Harkness is specialized in Digimon.
