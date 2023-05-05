@@ -58,8 +58,8 @@ CREATE TABLE specializations (
 -- Create a "join table" called visits to handle the relationship between the tables animals and vets
 CREATE TABLE visits (
     id INT GENERATED ALWAYS AS IDENTITY,
-    date_of_visit date,
-    animals INT REFERENCES animals(id),
-    vets INT REFERENCES vets (id)
+    animal_id INT REFERENCES animals(id),
+    vet_id INT REFERENCES vets (id),
+    date_of_visit date
 );
 
